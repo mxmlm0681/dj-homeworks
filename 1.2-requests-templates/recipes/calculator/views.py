@@ -16,7 +16,7 @@ DATA = {
         'сыр, ломтик': 1,
         'помидор, ломтик': 1,
     },
-    # можете добавить свои рецепты ;)
+    # можете добавить свои рецепты;)
 }
 
 # Напишите ваш обработчик. Используйте DATA как источник данных
@@ -28,3 +28,36 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+
+
+def omlet(request):
+    servings = int(request.GET.get("servings"))
+    for x in DATA['omlet']:
+        DATA['omlet'][x] = DATA['omlet'][x]*servings
+    context = {
+        'recipe': DATA['omlet']
+    }
+    return render(request, 'calculator/index.html', context)
+
+
+def pasta(request):
+    servings = int(request.GET.get("servings"))
+    for x in DATA['pasta']:
+        DATA['pasta'][x] = DATA['pasta'][x] * servings
+    context = {
+        'recipe': DATA['pasta']
+    }
+    return render(request, 'calculator/index.html', context)
+
+
+def buter(request):
+    servings = int(request.GET.get("servings"))
+    for x in DATA['buter']:
+        DATA['buter'][x] = DATA['buter'][x] * servings
+    context = {
+        'recipe': DATA['buter']
+    }
+    return render(request, 'calculator/index.html', context)
+
+
+
