@@ -16,6 +16,15 @@ class Article(models.Model):
         return self.title
 
 
+class Tag(models.Model):
+    name = models.CharField(max_length=256, verbose_name='Тэг')
+    articles = models.ManyToManyField('Article', through='Relationship',
+                                      related_name='tags')
+
+    def __str__(self):
+        return self.name
+
+
 class Relationship(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE,
                                 related_name='scopes')
