@@ -36,3 +36,6 @@ class Relationship(models.Model):
         verbose_name = 'Тематика статьи'
         verbose_name_plural = 'Тематики статьи'
         ordering = ['-is_main', 'tag']
+
+
+
