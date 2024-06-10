@@ -14,3 +14,4 @@ def students_list(request):
     ordering = 'group'
 
     return render(request, template, context)
+

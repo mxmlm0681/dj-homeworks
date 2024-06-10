@@ -80,7 +80,7 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '5432',
         'USER': 'postgres',
-        'PASSWORD': '0681',
+        'PASSWORD': '1234',
     }
 }
 
@@ -136,3 +136,4 @@ try:
     from .settings_local import *
 except ImportError:
     pass
+
