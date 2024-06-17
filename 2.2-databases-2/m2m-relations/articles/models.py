@@ -27,9 +27,9 @@ class Tag(models.Model):
 
 class Relationship(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE,
-                                related_name='scopes')
+                                related_name='scope')
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE,
-                            related_name='scopes', verbose_name='Раздел')
+                            related_name='scope', verbose_name='Раздел')
     is_main = models.BooleanField(default=False, verbose_name='Основной')
 
     class Meta:
