@@ -22,7 +22,7 @@ class StockSerializer(serializers.ModelSerializer):
         model = Stock
         fields = ['id', 'name', 'description', 'positions']
 
-    def create(self, validated_data, stock_product=None):
+    def create(self, validated_data):
         positions = validated_data.pop('positions')
         stock = super().create(validated_data)
         for pos in positions:
